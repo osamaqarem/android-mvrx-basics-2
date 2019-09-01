@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">MvRx_Project</string>
+    <string name="main_activity">main activity</string>
+    <string name="main_fragment">main FRAGMENT</string>
+</resources>
