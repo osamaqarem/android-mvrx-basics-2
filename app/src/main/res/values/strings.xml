@@ -2,4 +2,8 @@
     <string name="app_name">MvRx_Project</string>
     <string name="main_activity">main activity</string>
     <string name="main_fragment">main FRAGMENT</string>
+    <string name="second_fragment">Second Fragment</string>
+    <string name="increment">Increment</string>
+    <string name="go_back">Go Back</string>
+    <string name="go_to_second_screen">Go To Second Screen</string>
 </resources>

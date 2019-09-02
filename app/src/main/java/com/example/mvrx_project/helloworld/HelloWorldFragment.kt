@@ -4,9 +4,10 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.findNavController
 import com.airbnb.mvrx.MvRxState
 import com.airbnb.mvrx.PersistState
-import com.airbnb.mvrx.fragmentViewModel
+import com.airbnb.mvrx.activityViewModel
 import com.airbnb.mvrx.withState
 import com.example.mvrx_project.R
 import com.example.mvrx_project.core.BaseFragment
@@ -37,7 +38,7 @@ class HelloWorldViewModel(initialState: HelloWorldState) :
 // Fragment
 class HelloWorldFragment : BaseFragment() {
     // Instantiate view model with state. This is local state for this fragment.
-    private val myViewModel: HelloWorldViewModel by fragmentViewModel()
+    private val myViewModel: HelloWorldViewModel by activityViewModel()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -50,6 +51,10 @@ class HelloWorldFragment : BaseFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         incrementButton.setOnClickListener {
             myViewModel.incrementCount()
+        }
+
+        firstButton.setOnClickListener {
+            it.findNavController().navigate(R.id.action_helloWorldFragment_to_secondFragment)
         }
     }
 

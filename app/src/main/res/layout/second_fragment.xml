@@ -3,35 +3,26 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+
     <TextView
         android:id="@+id/textView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="top"
         android:layout_marginTop="50dp"
-        android:text="@string/main_fragment"
+        android:text="@string/second_fragment"
         android:textAlignment="center"
         android:textSize="40sp" />
 
     <Button
-        android:id="@+id/incrementButton"
+        android:id="@+id/secondButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:background="@color/colorAccent"
+        android:background="@color/colorPrimaryDark"
         android:padding="15dp"
-        android:text="@string/increment"
+        android:text="@string/go_back"
         android:textColor="#fff" />
 
 
-    <Button
-        android:id="@+id/firstButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="150dp"
-        android:background="@color/colorPrimary"
-        android:padding="15dp"
-        android:text="@string/go_to_second_screen"
-        android:textColor="#fff" />
 </FrameLayout>

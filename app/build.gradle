@@ -1,7 +1,7 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
-// Kapt for DataBinding with Kotlin
+// Kapt for annotation processing with Kotlin
 apply plugin: 'kotlin-kapt'
 
 android {
@@ -32,7 +32,6 @@ dependencies {
     def navVersion = '2.0.0'
     def epoxyVersion = '3.2.0'
     def retrofitVersion = '2.4.0'
-    def buildToolsVersion = '28.0.3'
 
 
     implementation fileTree(dir: 'libs', include: ['*.jar'])
@@ -58,10 +57,13 @@ dependencies {
     // Also support DataBinding with XML.
     implementation "androidx.lifecycle:lifecycle-extensions:$lifecycleVersion"
 
-    // Navigation
+    // Navigation Component
     // Fragment transactions, stack navigation, deep linking, transition animations...
     implementation "androidx.navigation:navigation-fragment-ktx:$navVersion"
+    implementation "androidx.navigation:navigation-ui-ktx:$navVersion"
 
+    // DebugDB
+//    debugImplementation 'com.amitshekhar.android:debug-db:1.0.4'
     // Auto. Testing
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test:runner:1.1.1'
