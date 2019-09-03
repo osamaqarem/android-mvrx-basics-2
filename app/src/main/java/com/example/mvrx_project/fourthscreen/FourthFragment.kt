@@ -1,4 +1,4 @@
-package com.example.mvrx_project.secondscreen
+package com.example.mvrx_project.fourthscreen
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -9,24 +9,24 @@ import com.airbnb.mvrx.existingViewModel
 import com.example.mvrx_project.FormViewModel
 import com.example.mvrx_project.R
 import com.example.mvrx_project.core.BaseFragment
-import kotlinx.android.synthetic.main.second_fragment.*
+import kotlinx.android.synthetic.main.fourth_fragment.*
 
-class SecondFragment : BaseFragment() {
-
+class FourthFragment : BaseFragment() {
     private val viewModel: FormViewModel by existingViewModel()
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? = inflater.inflate(R.layout.second_fragment, container, false)
-
+    ): View? {
+        return inflater.inflate(R.layout.fourth_fragment, container, false)
+    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        buttonTwo.setOnClickListener {
-            it.findNavController().navigate(R.id.action_secondFragment_to_thirdFragment)
+        buttonFour.setOnClickListener {
+            it.findNavController().navigate(R.id.action_fourthFragment_to_firstFragment)
         }
 
     }
