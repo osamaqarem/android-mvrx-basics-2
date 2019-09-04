@@ -40,7 +40,7 @@ class FirstFragment : BaseFragment() {
     override fun invalidate() =
         // Setting value from state to view text manually.
         withState(viewModel) { currentState ->
-            textView.text = currentState.title + "\n" + currentState.count
+            textView.text = currentState.count.toString()
         }
 
 
