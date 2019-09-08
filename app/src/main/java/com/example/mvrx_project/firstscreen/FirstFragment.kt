@@ -10,6 +10,7 @@ import com.airbnb.mvrx.withState
 import com.example.mvrx_project.FormViewModel
 import com.example.mvrx_project.R
 import com.example.mvrx_project.core.BaseFragment
+import com.example.mvrx_project.services.networking.RequestsService
 import kotlinx.android.synthetic.main.first_fragment.*
 
 
@@ -30,6 +31,8 @@ class FirstFragment : BaseFragment() {
         incrementButton.setOnClickListener {
             viewModel.incrementCount()
         }
+
+        RequestsService.getRepos()
 
         firstButton.setOnClickListener {
             it.findNavController().navigate(R.id.first_to_second)
