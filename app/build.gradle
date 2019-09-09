@@ -33,6 +33,7 @@ dependencies {
     def retrofitVersion = '2.6.1'
     def rxAndroidVersion = '2.1.1'
     def rxJavaVersion = '2.2.11'
+    def requeryVersion = '1.6.0'
 
 
     implementation fileTree(dir: 'libs', include: ['*.jar'])
@@ -68,8 +69,8 @@ dependencies {
 
     // Retrofit
     implementation "com.squareup.retrofit2:retrofit:$retrofitVersion"
-    // GSON adapter for Retrofit
-    implementation "com.squareup.retrofit2:converter-gson:$retrofitVersion"
+    // Moshi adapter for Retrofit
+    implementation "com.squareup.retrofit2:converter-moshi:$retrofitVersion"
     // RxJava adapter for Retrofit
     implementation "com.squareup.retrofit2:adapter-rxjava2:$retrofitVersion"
 
@@ -78,8 +79,14 @@ dependencies {
     // RxJava
     implementation "io.reactivex.rxjava2:rxjava:$rxJavaVersion"
 
-    // DebugDB
-//    debugImplementation 'com.amitshekhar.android:debug-db:1.0.4'
+    // Requery & annotation processing
+    implementation "io.requery:requery:$requeryVersion"
+    implementation "io.requery:requery-kotlin:$requeryVersion"
+    implementation "io.requery:requery-android:$requeryVersion"
+    kapt "io.requery:requery-processor:$requeryVersion"
+
+    // DebugDB. For emulator: adb forward tcp:8080 tcp:8080
+    debugImplementation 'com.amitshekhar.android:debug-db:1.0.6'
 
     // Auto. Testing
     testImplementation 'junit:junit:4.12'

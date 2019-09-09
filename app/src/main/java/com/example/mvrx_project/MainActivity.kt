@@ -33,11 +33,9 @@ class FormViewModel(initialState: FormState) :
         setState { copy(textOne = value) }
     }
 
-
     fun setTextTwo(value: String) {
         setState { copy(textTwo = value) }
     }
-
 
     fun setTextThree(value: String) {
         setState { copy(textThree = value) }
